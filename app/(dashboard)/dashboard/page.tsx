@@ -80,25 +80,6 @@ export default async function DashboardPage() {
         {/* Winnings Card */}
         <section className="card p-6 flex flex-col justify-between">
           <div>
-            <h2 className="text-xl font-heading mb-4 text-accent">Subscription</h2>
-            <div className="space-y-2 text-zinc-300">
-              <p>Status: <span className={profile?.subscription_status === 'active' ? 'text-green-400' : 'text-zinc-400'}>{profile?.subscription_status || 'Inactive'}</span></p>
-              <p>Plan: {profile?.subscription_plan ? profile.subscription_plan.toUpperCase() : 'None'}</p>
-              {profile?.subscription_renewal_date && (
-                <p className="text-sm text-zinc-500">Renews: {new Date(profile.subscription_renewal_date).toLocaleDateString()}</p>
-              )}
-            </div>
-          </div>
-          <div className="mt-6">
-            <Link href="/pricing" className="btn-accent text-sm block text-center w-full md:w-auto">
-              {profile?.subscription_status === 'active' ? 'Manage Plan' : 'Upgrade Now'}
-            </Link>
-          </div>
-        </section>
-
-        {/* Winnings Card */}
-        <section className="card p-6 flex flex-col justify-between">
-          <div>
             <h2 className="text-xl font-heading mb-4 text-accent">Winnings</h2>
             <div className="text-4xl font-bold text-white mb-2">
               ${(0).toFixed(2)}
