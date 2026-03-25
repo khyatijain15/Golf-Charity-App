@@ -1,0 +1,23 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run replacer",
+			"type": "shell",
+			"command": "node replacer.js",
+			"args": []
+		},
+		{
+			"label": "Run Add Footer",
+			"type": "shell",
+			"command": "node addFooter.js",
+			"args": []
+		},
+		{
+			"label": "Run Cleanup",
+			"type": "shell",
+			"command": "node cleanup.js",
+			"args": []
+		}
+	]
+}

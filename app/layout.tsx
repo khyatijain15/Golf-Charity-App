@@ -52,7 +52,7 @@ export default async function RootLayout({
         {/* Navbar */}
         <header style={{
           position: 'fixed', top: 0, width: '100%', zIndex: 50,
-          background: 'rgba(8,8,16,0.8)', backdropFilter: 'blur(16px)',
+          background: 'rgba(10,22,40,0.8)', backdropFilter: 'blur(16px)',
           borderBottom: '1px solid var(--border)',
           padding: '0 32px', height: '64px',
           display: 'flex', justifyContent: 'space-between', alignItems: 'center'
@@ -65,8 +65,8 @@ export default async function RootLayout({
 
           {/* Center (Desktop only) */}
           <div className="hidden md:flex gap-8" style={{ gap: '32px' }}>
-            <Link href="/charities" style={{ fontSize: 14, color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s' }} className="hover:text-white">Charities</Link>
-            <Link href="/how-it-works" style={{ fontSize: 14, color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s' }} className="hover:text-white">How it works</Link>
+            <Link href="/charities" style={{ fontSize: 14, color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s' }} className="hover:text-[var(--text-primary)]">Charities</Link>
+            <Link href="/how-it-works" style={{ fontSize: 14, color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s' }} className="hover:text-[var(--text-primary)]">How it works</Link>
           </div>
 
           {/* Right */}
@@ -74,7 +74,7 @@ export default async function RootLayout({
             {!user ? (
               <>
                 <Link href="/login" style={{ fontSize: 14, color: 'var(--text-primary)', textDecoration: 'none', fontWeight: 500 }} className="hover:opacity-80">Sign In</Link>
-                <Link href="/signup" className="btn-accent" style={{ textDecoration: 'none', fontSize: 14, padding: '8px 16px' }}>Get Started</Link>
+                <Link href="/signup" className="btn-cta" style={{ textDecoration: 'none', fontSize: 14, padding: '8px 16px' }}>Get Started</Link>
               </>
             ) : (
               <>
@@ -91,7 +91,34 @@ export default async function RootLayout({
           </div>
         </header>
         <div style={{ marginTop: '64px', flex: 1 }}>{children}</div>
+      
+        {/* Footer */}
+        <footer style={{
+          background: '#050A14',
+          borderTop: '1px solid rgba(0, 217, 163, 0.15)',
+          padding: '32px 0',
+          marginTop: 'auto'
+        }}>
+          <div style={{
+            maxWidth: '1152px',
+            margin: '0 auto',
+            padding: '0 32px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '16px'
+          }}>
+            <p style={{ color: 'var(--text-muted)', fontSize: '14px', margin: 0 }}>
+              &copy; 2026 All Rights Reserved by Khyati
+            </p>
+            <div style={{ display: 'flex', gap: '24px' }}>
+              <Link href="#" style={{ color: 'var(--text-muted)', fontSize: '13px', textDecoration: 'none' }}>Privacy Policy</Link>
+              <Link href="#" style={{ color: 'var(--text-muted)', fontSize: '13px', textDecoration: 'none' }}>Terms of Service</Link>
+            </div>
+          </div>
+        </footer>
       </body>
+
     </html>
   );
 }

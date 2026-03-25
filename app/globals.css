@@ -1,19 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #080810;
-  --bg-card: #0F0F1A;
-  --bg-card-hover: #141425;
-  --border: #1C1C30;
-  --border-bright: #2A2A45;
-  --accent: #00FF87;
-  --accent-dim: #00CC6A;
-  --accent-glow: rgba(0, 255, 135, 0.15);
-  --text-primary: #F0F0FF;
-  --text-secondary: #7070A0;
-  --text-muted: #3A3A5A;
+  --bg: #0A1628;  /* Deep navy blue */
+  --bg-card: #111E34; /* Slightly lighter navy for cards */
+  --bg-card-hover: #162642;
+  --border: #1E293B;
+  --border-bright: #334155;
+  --accent: #00D9A3; /* Vibrant teal/emerald */
+  --accent-dim: #00B185;
+  --accent-glow: rgba(0, 217, 163, 0.15);
+  --cta: #FF6B6B; /* Warm coral */
+  --cta-dim: #E55A5A;
+  --cta-glow: rgba(255, 107, 107, 0.2);
+  --text-primary: #FFFFFF; /* Crisp white */
+  --text-secondary: #CBD5E1; /* Soft gray */
+  --text-muted: #94A3B8; /* Medium gray */
   --red: #FF4D6A;
-  --amber: #FFB020;
+  --amber: #F59E0B;
 }
 
 body {
@@ -23,7 +26,25 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Glowing accent button */
+/* Glowing accent button (CTA / Coral) */
+.btn-cta {
+  background: var(--cta);
+  color: #FFF;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  box-shadow: 0 0 20px var(--cta-glow);
+}
+.btn-cta:hover {
+  background: var(--cta-dim);
+  box-shadow: 0 0 32px rgba(255, 107, 107, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Glowing accent button (Teal Defaults) */
 .btn-accent {
   background: var(--accent);
   color: #000;
@@ -37,7 +58,7 @@ body {
 }
 .btn-accent:hover {
   background: var(--accent-dim);
-  box-shadow: 0 0 32px rgba(0,255,135,0.3);
+  box-shadow: 0 0 32px rgba(0, 217, 163, 0.3);
   transform: translateY(-1px);
 }
 
@@ -72,4 +93,5 @@ input::placeholder {
   color: var(--text-muted);
 }
 
-h1,h2,h3,h4 { font-family: var(--font-heading); }
+h1,h2,h3,h4 { font-family: var(--font-heading); color: var(--text-primary); }
+p { color: var(--text-secondary); }

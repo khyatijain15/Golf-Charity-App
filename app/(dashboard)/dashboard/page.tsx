@@ -27,7 +27,13 @@ export default async function DashboardPage() {
       .limit(5);
     scores = s || [];
 
-    const { data: c } = await supabase
+    const { createClient: createSupabaseClient } = await import('@supabase/supabase-js');
+    const adminSupabase = createSupabaseClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!
+    );
+    
+    const { data: c } = await adminSupabase
       .from('charities')
       .select('id, name')
       .eq('is_active', true)

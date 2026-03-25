@@ -8,9 +8,7 @@ export default async function AdminDrawsPage() {
     .select('*')
     .order('draw_month', { ascending: false });
 
-  // Ensure current month draw exists for simplicity
   if (!draws || draws.length === 0 || draws[0].draw_month !== new Date().toISOString().substring(0, 7) + '-01') {
-    // Usually this is handled by a cron, but we mock it simply in the UI for ease of use
   }
 
   return (
